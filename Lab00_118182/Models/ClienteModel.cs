@@ -31,8 +31,23 @@ namespace Lab00_118182.Models
 
         public static bool Editar(int id, ClienteModel nuevoCliente)
         {
-
-            return true;
+            try
+            {
+                var posicion = ClienteData.Instancia.ListaCliente.FindIndex(cliente => cliente.ID == id);
+                ClienteData.Instancia.ListaCliente[posicion] = new ClienteModel
+                {
+                    ID = id,
+                    Nombre = nuevoCliente.Nombre,
+                    Apellido = nuevoCliente.Apellido,
+                    Telefono = nuevoCliente.Telefono,
+                    Descripcion = nuevoCliente.Descripcion
+                };
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
     }
 }

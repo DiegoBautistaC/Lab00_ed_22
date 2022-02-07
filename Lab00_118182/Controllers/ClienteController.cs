@@ -67,7 +67,18 @@ namespace Lab00_118182.Controllers
         {
             try
             {
-                return RedirectToAction(nameof(Index));
+                var validacion = ClienteModel.Editar(id, new ClienteModel
+                {
+                    Nombre = collection["Nombre"],
+                    Apellido = collection["Apellido"],
+                    Telefono = int.Parse(collection["Telefono"]),
+                    Descripcion = collection["Descripcion"]
+                });
+                if (validacion)
+                {
+                    return RedirectToAction(nameof(Index));
+                }
+                return View();
             }
             catch
             {
