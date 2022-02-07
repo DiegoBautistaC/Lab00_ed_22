@@ -89,7 +89,8 @@ namespace Lab00_118182.Controllers
         // GET: ClienteController/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            var modelo = ClienteData.Instancia.ListaCliente.Find(cliente => cliente.ID == id);
+            return View(modelo);
         }
 
         // POST: ClienteController/Delete/5
@@ -99,7 +100,12 @@ namespace Lab00_118182.Controllers
         {
             try
             {
-                return RedirectToAction(nameof(Index));
+                var validacion = ClienteModel.Borrar(id);
+                if (validacion)
+                {
+                    return RedirectToAction(nameof(Index));
+                }
+                return View();
             }
             catch
             {

@@ -49,5 +49,19 @@ namespace Lab00_118182.Models
                 return false;
             }
         }
+
+        public static bool Borrar(int id)
+        {
+            try
+            {
+                var posicion = ClienteData.Instancia.ListaCliente.FindIndex(cliente => cliente.ID == id);
+                ClienteData.Instancia.ListaCliente.RemoveAt(posicion);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
     }
 }
