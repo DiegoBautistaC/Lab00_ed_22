@@ -7,7 +7,14 @@
 <h1>Index</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">Create New</a><br />
+    <a asp-action="Index">Nombre Ascendente</a><br />
+    @{
+        ClienteModel.OrdenarApellido(true);
+    }
+    <a asp-action="Index">Nombre Descendente</a><br />
+    <a asp-action="Index">Apellido Ascendente</a><br />
+    <a asp-action="Index">Apellido Descendente</a><br />
 </p>
 <table class="table">
     <thead>

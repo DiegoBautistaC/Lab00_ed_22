@@ -63,5 +63,95 @@ namespace Lab00_118182.Models
                 return false;
             }
         }
+
+        //Orden ascendente si la variable tipo es verdadera, orden descendente si es falsa
+        public static bool OrdenarNombre(bool tipo)
+        {
+            try
+            {
+                if (tipo)
+                {
+                    for (int i = 0; i < ClienteData.Instancia.ListaCliente.Count; i++)
+                    {
+                        for (int j = 0; j < ClienteData.Instancia.ListaCliente.Count - 1 - i; j++)
+                        {
+                            int n = ClienteData.Instancia.ListaCliente[j].Nombre.CompareTo(ClienteData.Instancia.ListaCliente[j + 1].Nombre);
+                            if (n > 0)
+                            {
+                                var Aux = ClienteData.Instancia.ListaCliente[j + 1];
+                                ClienteData.Instancia.ListaCliente[j + 1] = ClienteData.Instancia.ListaCliente[j];
+                                ClienteData.Instancia.ListaCliente[j] = Aux;
+                            }
+                        }
+                    }
+                }
+                else
+                {
+                    for (int i = 0; i < ClienteData.Instancia.ListaCliente.Count; i++)
+                    {
+                        for (int j = 0; j < ClienteData.Instancia.ListaCliente.Count - 1 - i; j++)
+                        {
+                            int n = ClienteData.Instancia.ListaCliente[j].Nombre.CompareTo(ClienteData.Instancia.ListaCliente[j + 1].Nombre);
+                            if (n < 0)
+                            {
+                                var Aux = ClienteData.Instancia.ListaCliente[j + 1];
+                                ClienteData.Instancia.ListaCliente[j + 1] = ClienteData.Instancia.ListaCliente[j];
+                                ClienteData.Instancia.ListaCliente[j] = Aux;
+                            }
+                        }
+                    }
+                }
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        //Orden ascendente si la variable tipo es verdadera, orden descendente si es falsa
+        public static bool OrdenarApellido(bool tipo)
+        {
+            try
+            {
+                if (tipo)
+                {
+                    for (int i = 0; i < ClienteData.Instancia.ListaCliente.Count; i++)
+                    {
+                        for (int j = 0; j < ClienteData.Instancia.ListaCliente.Count - 1 - i; j++)
+                        {
+                            int n = ClienteData.Instancia.ListaCliente[j].Apellido.CompareTo(ClienteData.Instancia.ListaCliente[j + 1].Apellido);
+                            if (n > 0)
+                            {
+                                var Aux = ClienteData.Instancia.ListaCliente[j + 1];
+                                ClienteData.Instancia.ListaCliente[j + 1] = ClienteData.Instancia.ListaCliente[j];
+                                ClienteData.Instancia.ListaCliente[j] = Aux;
+                            }
+                        }
+                    }
+                }
+                else
+                {
+                    for (int i = 0; i < ClienteData.Instancia.ListaCliente.Count; i++)
+                    {
+                        for (int j = 0; j < ClienteData.Instancia.ListaCliente.Count - 1 - i; j++)
+                        {
+                            int n = ClienteData.Instancia.ListaCliente[j].Apellido.CompareTo(ClienteData.Instancia.ListaCliente[j + 1].Apellido);
+                            if (n < 0)
+                            {
+                                var Aux = ClienteData.Instancia.ListaCliente[j + 1];
+                                ClienteData.Instancia.ListaCliente[j + 1] = ClienteData.Instancia.ListaCliente[j];
+                                ClienteData.Instancia.ListaCliente[j] = Aux;
+                            }
+                        }
+                    }
+                }
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
     }
 }
