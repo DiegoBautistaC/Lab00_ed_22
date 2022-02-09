@@ -1,18 +1,12 @@
 ﻿@model IEnumerable<Lab00_118182.Models.ClienteModel>
 
 @{
-    ViewData["Title"] = "Inicio";
+    ViewData["Title"] = "Nombre Ascendente";
 }
 
-<h1>Clientes de Telemercadeo</h1>
+<h1>Nombre Ascendente</h1>
 
-<p>
-    <a asp-action="Create">Crear nuevo</a><br />
-    <a asp-action="NombreAscendente">Orden Nombre Ascendente</a><br />
-    <a asp-action="NombreDescendente">Orden Nombre Descendente</a><br />
-    <a asp-action="ApellidoAscendente">Orden Apellido Ascendente</a><br />
-    <a asp-action="ApellidoDescendente">Orden Apellido Descendente</a><br />
-</p>
+
 <table class="table">
     <thead>
         <tr>
@@ -52,12 +46,9 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Descripcion)
             </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
-                @Html.ActionLink("Details", "Details", new { id=item.ID }) |
-                @Html.ActionLink("Delete", "Delete", new { id=item.ID })
-            </td>
         </tr>
 }
     </tbody>
 </table>
+
+<a asp-action="Index">Back to List</a>

@@ -1,12 +1,12 @@
 ﻿@model Lab00_118182.Models.ClienteModel
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Edición cliente";
 }
 
-<h1>Edit</h1>
+<h1>Editando al cliente @Html.DisplayFor(modelo => modelo.ID)</h1>
 
-<h4>ClienteModel</h4>
+<h4>@Html.DisplayFor(modelo => modelo.Nombre) @Html.DisplayFor(modelo => modelo.Apellido)</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">

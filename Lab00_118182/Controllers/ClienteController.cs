@@ -30,6 +30,30 @@ namespace Lab00_118182.Controllers
             return View(new ClienteModel());
         }
 
+        public ActionResult NombreAscendente()
+        {
+            ClienteModel.OrdenarNombre(true);
+            return View(ClienteData.Instancia.ListaCliente);
+        }
+
+        public ActionResult NombreDescendente()
+        {
+            ClienteModel.OrdenarNombre(false);
+            return View(ClienteData.Instancia.ListaCliente);
+        }
+
+        public ActionResult ApellidoAscendente()
+        {
+            ClienteModel.OrdenarApellido(true);
+            return View(ClienteData.Instancia.ListaCliente);
+        }
+
+        public ActionResult ApellidoDescendente()
+        {
+            ClienteModel.OrdenarApellido(false);
+            return View(ClienteData.Instancia.ListaCliente);
+        }
+
         // POST: ClienteController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]

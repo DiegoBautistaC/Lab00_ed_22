@@ -1,13 +1,14 @@
 ﻿@model Lab00_118182.Models.ClienteModel
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Detalles de los clientes";
 }
 
-<h1>Details</h1>
+<h1>Detalles</h1>
 
 <div>
-    <h4>ClienteModel</h4>
+    <h4>Cliente @Html.DisplayFor(modelo => modelo.ID)</h4>
+    <h3>@Html.DisplayFor(modelo => modelo.Nombre) @Html.DisplayFor(modelo => modelo.Apellido)</h3>
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
