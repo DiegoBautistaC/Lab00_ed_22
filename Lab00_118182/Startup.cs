@@ -46,7 +46,7 @@ namespace Lab00_118182
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Cliente}/{action=Index}/{id?}");
             });
         }
     }
